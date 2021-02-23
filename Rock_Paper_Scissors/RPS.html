@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		#igra{
+			height: 100vh;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+
+		}
+	</style>
+</head>
+<body>
+	<div id="igra">
+		<div>
+			<button  onclick="Paper()">Paper</button>
+			<button  onclick="Rock()">Rock</button>
+			<button onclick="Scissors()">Scissors</button>
+		</div>
+
+		
+		<div>
+			<div id="prikaz"></div>
+			<div id="prikaz2"></div>
+			<div id="prikaz3"></div>
+		</div>
+	</div>
+
+		
+
+	<script>
+  		 
+  		 var mojPotez = "";
+
+		function rezultat(){
+			pcOdigrao = kompIgra();
+			covekOdigrao = mojPotez;
+			var ekran = document.getElementById("prikaz");
+			var ekran2 = document.getElementById("prikaz2");
+			var ekran3 = document.getElementById("prikaz3");
+			ekran.innerHTML = "You played: " +covekOdigrao; 
+			ekran2.innerHTML = "Ai played: " +pcOdigrao; 
+			 
+			var ishod = ""
+			if(pcOdigrao == covekOdigrao){
+				return ekran3.innerHTML = "Draw"
+			}
+			if(pcOdigrao =="Paper" && covekOdigrao == "Rock"){
+				return ekran3.innerHTML = "Ai won";
+			}
+			if(pcOdigrao =="Rock" && covekOdigrao == "Scissors"){
+				return ekran3.innerHTML =  "Ai won"
+			}
+			if(pcOdigrao =="Scissors" && covekOdigrao == "Paper"){
+				return ekran3.innerHTML = "Ai won"
+			}
+			if(covekOdigrao =="Paper" && pcOdigrao == "Rock"){
+				return ekran3.innerHTML = "You won"
+			}
+			if(covekOdigrao =="Rock" && pcOdigrao == "Scissors"){
+				return ekran3.innerHTML = "You won"
+			}
+			if(covekOdigrao =="Scissors" && pcOdigrao == "Paper"){
+				return ekran3.innerHTML = "You won"
+			}
+		}
+
+		
+		function Paper(){
+			mojPotez = "Paper";
+			return rezultat();
+			
+		}
+		function Rock(){
+			mojPotez = "Rock";
+			return rezultat()
+		}
+
+		function Scissors(){
+			mojPotez = "Scissors";
+			return rezultat()
+		}
+
+			
+
+		
+
+
+
+
+		function kompIgra(){
+			PRS = [
+			"Paper", "Rock", "Scissors"
+			]
+
+			var r = Math.floor(Math.random()*PRS.length)
+
+			var pcOdigrao = PRS[r]
+
+			return pcOdigrao;
+
+			
+		}
+
+
+		
+	
+
+
+
+
+
+
+
+
+	</script>
+	
+
+
+
+
+
+
+
+
+</body>
+</html>
