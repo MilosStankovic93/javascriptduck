@@ -1,0 +1,77 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+
+body{
+	background: #272727;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+#game{
+	width: 600px;
+	height: 200px;
+	border: solid 1px black;
+	margin: 20px auto;
+}
+
+
+#char{
+	width: 20px;
+	height: 50px;
+	background: red;
+	position: relative;
+	top: 150px;	
+}
+
+.animateJump{
+	animation: jump 500ms;
+}
+
+#block{
+	width: 20px;
+	height: 20px;
+	background: orange;
+	position: relative;
+	top: 130px;
+	left: 580px;
+	animation: block 1s infinite linear;
+
+}
+
+@keyframes jump{
+	0%{top:150px;}
+	30%{top:100px;}
+	70%{top:100px;}
+	100%{top:150px;}
+}
+
+@keyframes block{
+	0%{left:580px;}
+	100%{left:-5px;}
+}
+
+
+#start{
+	display: none;
+	width: 80px;
+	height: 50px;
+	background: #000;
+	color: red;
+	border: none;
+}
+
+#btnCont{
+	height: 50px;
+}
+
+
+#score{
+	font-size: 22px;
+	color: yellow;
+}
